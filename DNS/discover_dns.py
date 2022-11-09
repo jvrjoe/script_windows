@@ -1,11 +1,11 @@
 import getpass; import os; from pypsexec.client import Client
 
-print(f'\nCrie um arquivo texto com o nome das máquinas que deseja visualizar.')
+print(f'\nCrie um arquivo texto com o nome das máquinas na rede que deseja visualizar.')
 print(f'Neste arquivo, o nome das máquinas devem estar separados por linha.\n')
-print(f'Ex.:\n PC1\n PC2\n PC3\n')
+print(f'Exemplo:\n PC1\n PC2\n PC3\n')
 input(f'Com o arquivo criado, pressione a tecla Enter para continuar...\n')
 
-print(f'É necessário um usuário com previlégios administrativos na rede.')
+print(f'É necessário um usuário com privilégios administrativos na rede.')
 username = input('Nome de usuário: ')
 password = getpass.getpass('Senha: ')
 
