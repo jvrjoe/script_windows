@@ -1,14 +1,21 @@
 import getpass; import os; from pypsexec.client import Client
 
-username = input('Usuário: ')
+print(f'\nCrie um arquivo texto com o nome das máquinas que deseja visualizar.')
+print(f'Neste arquivo, o nome das máquinas devem estar separados por linha.\n')
+print(f'Ex.:\n PC1\n PC2\n PC3\n')
+input(f'Com o arquivo criado, pressione a tecla Enter para continuar...\n')
+
+print(f'É necessário um usuário com previlégios administrativos na rede.')
+username = input('Nome de usuário: ')
 password = getpass.getpass('Senha: ')
 
-fileHosts = r'D:\py\scripts_windows\DNS\hosts.txt'
+fileHosts = input('Informe o caminho para o arquivo texto criado: ')
 
 with open(fileHosts) as file:
     for host in file:
         if os.system("ping -n 1 " + host) == 0:
-            c = Client(host.replace('\n', ''), username=username, password=password, encrypt=False)  # encrypt=False only for Windows 7
+            c = Client(host.replace('\n', ''), username=username, password=password, encrypt=False)  
+            # encrypt=False only for Windows 7
             executable = "cmd"
             argument = "/c ipconfig /all | findstr Servidores"
 
