@@ -4,7 +4,7 @@ print(f'\nCrie um arquivo texto com o nome das máquinas na rede que deseja visu
 print(f'Neste arquivo, o nome das máquinas devem estar separados por linha.\n')
 print(f'Exemplo:\n PC1\n PC2\n PC3\n')
 input(f'Com o arquivo criado, pressione a tecla Enter para continuar...\n')
-
+# teste novo branch
 print(f'É necessário um usuário com privilégios administrativos na rede ou administrador local.')
 username = input('Nome de usuário: ')
 password = getpass.getpass('Senha: ')
