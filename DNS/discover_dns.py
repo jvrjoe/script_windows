@@ -1,7 +1,3 @@
-"""
-Script para verificar o servidor DNS das estações com Windows7 a partir de um arquivo com o nome dos hosts.
-"""
-
 import getpass; import os; from pypsexec.client import Client
 
 username = input('Usuário: ')
