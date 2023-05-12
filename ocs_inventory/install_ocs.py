@@ -9,10 +9,10 @@ argument= r'/c \\pt55\ocs_inventory$\invent.bat'
 # print('Instalação remota OCS_Inventory')
 # print('Deve ser executado com login administrativo!')
 
-# domain = os.environ['USERDOMAIN']
+domain = os.environ['USERDOMAIN']
 usr = (os.environ['userdomain'] + '\\' + getpass.getuser()) #"""'\\'+ getpass.getuser()""")
-# pw = getpass.getpass(f'Digite a senha do usuário: ')
-pw = '587.joeAlt_S'
+pw = getpass.getpass(f'Digite a senha do usuário: ')
+
 
 print()
 
