@@ -4,7 +4,7 @@ from ping3 import ping
 inicial = IPv4Address(input("Digite o IP inicial: "))
 final = IPv4Address(input("Digite o IP final: "))
 
-ips = [str(IPv4Address(ip)) for ip in range(int(inicial), int(final))]
+ips = [str(IPv4Address(ip)) for ip in range(int(inicial), int(final+1))]
 
 try:
     for ip in ips:
