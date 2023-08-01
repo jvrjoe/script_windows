@@ -1,1 +1,1 @@
-Scripts desenvolvidos em Python para Windows.
+Scripts de automação.

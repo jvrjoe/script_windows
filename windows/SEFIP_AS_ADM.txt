@@ -1,0 +1,49 @@
+1. Após a instalação atribua permissões de leitura, escrita e execução (r w x) ao grupo USUÁRIOS nas seguintes pastas:
+
+%WINDIR%\Prefetch
+C:\Program Files\CAIXA
+C:\Program Files (x86)\CAIXA
+C:\Program Files\GRRF
+C:\Program Files (x86)\GRRF
+
+
+2. Acesse o editor de registro do Windows (regedit) e vá até a chave abaixo.Atribua ao grupo USUÁRIOS as permissões de leitura, escrita:
+
+HKEY_LOCAL_MACHINE\Software\Caixa
+HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Caixa
+
+3. Gpedit.msc > Política de Computador Local > Configurações do Windows > Configurações de Segurança > Políticas Locais > Atribuição de Direitos de Usuário > Criar Objetos Globais > Adicionar o usuário ou grupo.
+
+
+
+CHAMADO
+Executar o SEFIP e GRRF sem ser admin local.
+
+Atualmente as máquinas que possuem as aplicações SEFIP e GRRF instaladas encontram-se configuradas para que qualquer usuário do grupo "PROTEST\Domain Users" possua permissões de administrador local, o que pode ser um fator de risco.
+
+
+Visando no controle de segurança, as seguintes configurações devem ser aplicadas:
+
+
+Atribuir permissões de Controle Total para "PROTEST\Doamin Users" nos diretórios:
+C:\Windows\Prefetch
+x64
+C:\Program Files (x86)\CAIXA
+C:\Program Files (x86)\GRRF
+x86
+C:\Program Files\CAIXA
+C:\Program Files\GRRF
+
+
+No Editor de Registro (regedit), atribuir permissões de Controle Total para "PROTEST\Domain Users" na chave:
+x64
+HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Caixa
+x86
+HKEY_LOCAL_MACHINE\Software\Caixa
+
+
+No Editor de Política de Grupo Local, adicionar o grupo "PROTEST\Domain Users" em "Criar objetos globais"
+Gpedit.msc > Política de Computador Local > Configurações do Windows > Configurações de Segurança > Políticas Locais > Atribuição de Direitos de Usuário > Criar Objetos Globais > Adicionar o grupo.
+
+No Gerenciamento do Computador, remover o "PROTEST\Domain Users" da lista de membros do grupo de Administradores local.
+Gerenciamento do Computador > Usuário e Grupo Locais > Grupos > Adminsitradores 
