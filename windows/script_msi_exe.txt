@@ -11,7 +11,7 @@ FIREWALL (DISABLE ALL PROFILE)
 netsh advfirewall set allprofiles state off
 
 AVG
-psexec.exe \\tijuca-recep1 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd /c \\copacabana\informatica$\Softwares\Antivirus\avg_install.exe /q /qn /norestart
+psexec.exe \\copa-corr8 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd /c \\copacabana\informatica$\Softwares\Antivirus\avg_install.exe /q /qn /norestart
 
 REMOVER
 psexec.exe \\copa-fine11 cmd /c \\copacabana\informatica$\Softwares\Antivirus\AVG_Remover.exe /q /qn /norestart
