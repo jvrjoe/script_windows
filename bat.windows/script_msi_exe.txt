@@ -46,8 +46,6 @@ LIMPEZA DE DISCO
 psexec.exe \\citta-cp3 cmd cleanmgr.exe /lowdisk /d letradodrive
 
 
-psexec.exe \\copa-secr2 cmd /c \\pt55\f$\setup.exe /auto upgrade /showoobe none /dynamicupdate disable /quiet
-
 
 
 
