@@ -1,7 +1,6 @@
 import getpass
 import os
 from pypsexec.client import Client
-import smbprotocol
 
 username = (os.environ['USERDOMAIN'] + '\\' + os.environ['USERNAME'])
 password = getpass.getpass('Senha: ')
@@ -21,4 +20,26 @@ with open(fileHosts) as file:
         finally:
             c.remove_service()
             c.disconnect()
+
+"""import os
+
+dirBatchPatch = 'c$\Program Files\BatchPatch'
+servers = [
+    'PROTEST-PC',
+    'APLICATIVOS',
+    'PROTEST-PC1',
+    'MEGA',
+    'BARRA-1',
+    'BARR',
+    'COPACABANA',
+    'TIJUC',
+    'NITERO',
+    'COPA-SQL',
+    'COPINHA',
+    'ESOSERVER',
+    'PROTEST-SQL',
+]
+
+for i in servers:
+    os.system(f'rmdir /s /q "\\\{i}\{dirBatchPatch}" >NUL 2>&1')"""
             
