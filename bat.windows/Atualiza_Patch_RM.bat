@@ -26,14 +26,14 @@ setlocal ENABLEDELAYEDEXPANSION
     echo  Máquina: %host%                                      
     echo ===========================================
     if not defined host goto define
+
+    :patch
     echo:
     echo Finalizando o processo "RM.exe"...
     start /b taskkill /F /S %host% /IM "rm.exe" >NUL 2>&1
     if %ERRORLEVEL% == 128 set status=ok && echo Precesso finalizado.
     if %ERRORLEVEL% == 0 set status=ok && echo Processo finalizado.
     if not defined status echo Erro ao finalizar o processo. Código: %ERRORLEVEL% && pause && goto define
-
-    :patch
     echo:
     echo Instalando o Patch ...
     psexec \\%host% -u %USERDOMAIN%\%USERNAME% -p %pass% cmd /c %dir_patch% /SILENT /SUPPRESSMSGBOXES /NORESTART >NUL 2>&1

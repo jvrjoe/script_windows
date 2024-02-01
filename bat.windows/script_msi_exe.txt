@@ -13,34 +13,25 @@ netsh advfirewall set allprofiles state off
 AVG
 psexec.exe \\copa-corr8 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd /c \\copacabana\informatica$\Softwares\Antivirus\avg_install.exe /q /qn /norestart
 
-REMOVER
+AVG_REMOVER
 psexec.exe \\copa-faci7 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd /c \\copacabana\informatica$\Softwares\Antivirus\AVG_Remover.exe /q /qn /norestart
 
-
-bat
+BAT
 psexec.exe \\copa-dp17 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd /c \\copinha\netlogon\invent.bat
 psexec.exe \\copa-dp17 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd \\copinha\netlogon\invent.bat
-
- -d diz ao psexec para não esperar que o cliente retorne do script.
-  -i diz ao psexec para executar o script interativamente, na área de trabalho do usuário
-
-CHAMA_UPDATE
-psexec.exe \\COPA-COND13,COPA-COND14,COPA-COND15,COPA-COND23,COPA-COND24,COPA-COND25,COPA-COND26 -d cmd /c \\copinha\wsus_offline$\update86.bat
-
 
 UPDATE_MSU
 psexec.exe \\copa-cont wusa \\pt55\d$\ultimate_10.0-kb5016616.msu /quiet /norestart
 error code 3010 - precisa reiniciar
 
-
 CMD
 psexec.exe \\tijuca-cond2 cmd
 
-
 ISO SETUP
-psexec.exe \\copa-cp17 -h \\copa-dp13\c$\win11\setup.exe /auto upgrade /quiet /dynamicupdate disable /norestart
-psexec.exe \\copa-cp17 -h \\pt55\f$\setup.exe /auto upgrade /quiet /noreboot
 
+psexec.exe \\copa-dp12 -u protest\jonathan.rodrigues -p 587.joeAlt_S -h cmd \\pt55\f$\setup.exe /auto upgrade /dynamicupdate disable /quiet /eula accept /noreboot /showoobe none
+
+psexec.exe \\copa-dp13 -h \\pt55\f$\setup.exe /auto upgrade /quiet /noreboot /showoobe none /copylogs C:\update_win.log
 
 LIMPEZA DE DISCO
 psexec.exe \\citta-cp3 cmd cleanmgr.exe /lowdisk /d letradodrive
