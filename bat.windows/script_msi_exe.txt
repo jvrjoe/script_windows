@@ -1,5 +1,5 @@
 MSI
-psexec \\copa-cont13 cmd /c msiexec.exe /i \\tijuc\e$\Software\Browsers\GoogleChromeStandaloneEnterprise64.msi /q /qn /norestart
+psexec \\niteroi-cond8 cmd /c msiexec.exe /i \\nitero\e$\Software\Browsers\GoogleChromeStandaloneEnterprise64.msi /q /qn /norestart
 
 EXE
 psexec \\name-host cmd /c \\server\share$\instalador.exe /q /qn /norestart
@@ -11,10 +11,10 @@ FIREWALL (DISABLE ALL PROFILE)
 netsh advfirewall set allprofiles state off
 
 AVG
-psexec.exe \\copa-corr8 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd /c \\copacabana\informatica$\Softwares\Antivirus\avg_install.exe /q /qn /norestart
+psexec.exe \\copa-comer10 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd /c \\copacabana\informatica$\Softwares\Antivirus\avg_install.exe /q /qn /norestart
 
 AVG_REMOVER
-psexec.exe \\copa-faci7 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd /c \\copacabana\informatica$\Softwares\Antivirus\AVG_Remover.exe /q /qn /norestart
+psexec.exe \\copa-dir2 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd /c \\copacabana\informatica$\Softwares\Antivirus\AVG_Remover.exe /q /qn /norestart
 
 BAT
 psexec.exe \\copa-dp17 -u protest\jonathan.rodrigues -p 587.joeAlt_S cmd /c \\copinha\netlogon\invent.bat
