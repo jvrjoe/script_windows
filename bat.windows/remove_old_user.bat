@@ -12,12 +12,14 @@ echo:
 echo Escolha uma opção para listar ou remover usuário antigo remotamente.
 echo 1 - Uma máquina.
 echo 2 - Várias máquinas.
+echo 0 - Sair
 echo:
 set "opt="
 set /p opt="Digite o número da opção: "
 echo.
 if "%opt%" == "1" goto only_one
-if "%opt%" == "2" ( goto several) else ( echo Opção inválida.)
+if "%opt%" == "2" goto several
+if "%opt%" == "0" ( exit ) else ( echo Opção inválida)
 pause
 call :option
 
@@ -29,13 +31,15 @@ echo Escolha uma opção:
 echo 1 - Listar usuários de uma máquina.
 echo 2 - Remover usuários de uma máquina.
 echo 3 - Voltar ao menu anterior.
+echo 0 - Sair
 echo:
 set "opt="
 set /p opt="Digite o número da opção: "
 echo.
 if "%opt%" == "1" goto list_only_one
 if "%opt%" == "2" goto remove_only_one
-if "%opt%" == "3" ( goto option) else ( echo Opção inválida.)
+if "%opt%" == "3" goto option
+if "%opt%" == "0" ( exit ) else ( echo Opção inválida)
 pause
 call :only_one
 
@@ -79,13 +83,15 @@ echo Escolha uma opção:
 echo 1 - Listar usuários de várias máquinas.
 echo 2 - Remover usuários de várias máquinas.
 echo 3 - Voltar ao menu anterior.
+echo 0 - Sair
 echo:
 set "opt="
 set /p opt="Digite o número da opção: "
 echo.
 if "%opt%" == "1" goto list_several
 if "%opt%" == "2" goto remove_several
-if "%opt%" == "3" ( goto option) else ( echo Opção inválida.)
+if "%opt%" == "3" goto option
+if "%opt%" == "0" ( exit ) else ( echo Opção inválida)
 pause
 call :several
 
