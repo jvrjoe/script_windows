@@ -3,7 +3,6 @@ chcp 65001
 title Listar/Remover usuário antigo.
 
 REM Para a execução em várias máquinas, deve-se criar um arquivo .txt com o nome de cada uma, linha a linha. O caminho do arquivo será solicitado.
-
 REM É necessário que o executável "DelProf2.exe" esteja no diretório %USERPROFILE%
 
 :option
