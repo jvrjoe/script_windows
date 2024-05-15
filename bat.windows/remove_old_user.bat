@@ -54,12 +54,12 @@ setlocal ENABLEDELAYEDEXPANSION
     REM set /p days="Dias de inatividade: "
     cls
     echo:
-    REM %USERPROFILE%\DelProf2.exe -l -c:%host% -ed:admin -d:%days%
-    %USERPROFILE%\DelProf2.exe -l -c:%host% -ed:admin | findstr %host%
+    REM %USERPROFILE%\DelProf2.exe -l -c:%host% -ed:admin -ed:jonathan* -ed:walmir -ed:marcelo.oliveira -d:%days%
+    %USERPROFILE%\DelProf2.exe -l -c:%host% -ed:admin -ed:jonathan* -ed:walmir -ed:marcelo.oliveira | findstr %host%
     echo:
     set "quest_log="
     set /p quest_log="Deseja salvar este log sim(1) ou não(0)? "
-    if "%quest_log%" == "1" %USERPROFILE%\DelProf2.exe -l -c:%host% -ed:admin | findstr %host% > %SYSTEMDRIVE%\list_users_%host%.txt & echo Log salvo: %SYSTEMDRIVE%\list_users_%host%.txt & echo. & pause & goto only_one
+    if "%quest_log%" == "1" %USERPROFILE%\DelProf2.exe -l -c:%host% -ed:admin -ed:jonathan* -ed:walmir -ed:marcelo.oliveira | findstr %host% > %SYSTEMDRIVE%\list_users_%host%.txt & echo Log salvo: %SYSTEMDRIVE%\list_users_%host%.txt & echo. & pause & goto only_one
     if "%quest_log%" == "0" ( goto only_one) else ( echo Opção inválida)
     pause
     call :only_one
@@ -75,8 +75,8 @@ setlocal ENABLEDELAYEDEXPANSION
     REM set /p days="Dias de inatividade: "
     cls
     echo:
-    REM %USERPROFILE%\DelProf2.exe -c:%host% -ed:admin -d:%days% -p
-    %USERPROFILE%\DelProf2.exe -c:%host% -ed:admin -p
+    REM %USERPROFILE%\DelProf2.exe -c:%host% -ed:admin -ed:jonathan* -ed:walmir -ed:marcelo.oliveira -d:%days% -p
+    %USERPROFILE%\DelProf2.exe -c:%host% -ed:admin -ed:jonathan* -ed:walmir -ed:marcelo.oliveira -p
     echo:
     pause
     goto only_one
@@ -111,12 +111,12 @@ setlocal ENABLEDELAYEDEXPANSION
     REM set /p days="Dias de inatividade: "
     cls
     echo:
-    REM for /F %%i in (%path%) do %USERPROFILE%\DelProf2.exe -l -c:%%i -ed:admin -d:%days%
-    for /F %%i in (%path%) do echo --------------------------------------------------------------------------- & echo. & %USERPROFILE%\DelProf2.exe -l -c:%%i -ed:admin | %WINDIR%\System32\findstr.exe %%i & echo.
+    REM for /F %%i in (%path%) do %USERPROFILE%\DelProf2.exe -l -c:%%i -ed:admin -ed:jonathan* -ed:walmir -ed:marcelo.oliveira -d:%days%
+    for /F %%i in (%path%) do echo --------------------------------------------------------------------------- & echo. & %USERPROFILE%\DelProf2.exe -l -c:%%i -ed:admin -ed:jonathan* -ed:walmir -ed:marcelo.oliveira | %WINDIR%\System32\findstr.exe %%i & echo.
     echo:
     set "quest_log="
     set /p quest_log="Deseja salvar este log sim(1) ou não(0)? "
-    if "%quest_log%" == "1" ( for /F %%i in (%path%) do echo --------------------------------------------------------------------------- & echo. & %USERPROFILE%\DelProf2.exe -l -c:%%i -ed:admin| %WINDIR%\System32\findstr.exe %%i & echo.) > %SYSTEMDRIVE%\list_users_several.txt & echo Log salvo: %SYSTEMDRIVE%\list_users_several.txt & echo. & pause & goto several
+    if "%quest_log%" == "1" ( for /F %%i in (%path%) do echo --------------------------------------------------------------------------- & echo. & %USERPROFILE%\DelProf2.exe -l -c:%%i -ed:admin -ed:jonathan* -ed:walmir -ed:marcelo.oliveira| %WINDIR%\System32\findstr.exe %%i & echo.) > %SYSTEMDRIVE%\list_users_several.txt & echo Log salvo: %SYSTEMDRIVE%\list_users_several.txt & echo. & pause & goto several
     if "%quest_log%" == "0" ( goto several) else ( echo Opção inválida.)
     pause
     goto several
@@ -131,8 +131,8 @@ setlocal ENABLEDELAYEDEXPANSION
     REM set /p days="Dias de inatividade: "
     cls
     echo:
-    REM for /F %%i in (%path%) do %USERPROFILE%\DelProf2.exe -c:%%i -ed:admin -d:%days% -p
-    for /F %%i in (%path%) do %USERPROFILE%\DelProf2.exe -c:%%i -ed:admin -p
+    REM for /F %%i in (%path%) do %USERPROFILE%\DelProf2.exe -c:%%i -ed:admin -ed:jonathan* -ed:walmir -ed:marcelo.oliveira -d:%days% -p
+    for /F %%i in (%path%) do %USERPROFILE%\DelProf2.exe -c:%%i -ed:admin -ed:jonathan* -ed:walmir -ed:marcelo.oliveira -p
     echo:       
     pause
     goto several
