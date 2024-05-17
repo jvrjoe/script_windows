@@ -9,7 +9,7 @@ logfile = f"c:\\pingFail_{host}_{date_time}.txt"
 
 with open(logfile, "a") as file:
     os.system('cls')
-    file.write(f'MONITORAMENTO DE FALHA INICIADO - HOST: {host} DATA/HORA: {dateNow}/{timeNow}')
+    file.write(f'MONITORAMENTO DE FALHA INICIADO - HOST: {host} DATA/HORA: {dateNow}/{timeNow}\n')
 print(f'MONITORAMENTO DE FALHA INICIADO - HOST: {host} DATA/HORA: {dateNow}/{timeNow}\n'
         f'LOG: {logfile}\n\n'
         'CTRL+C PARA ENCERRAR O PROCESSO.\n')
@@ -30,7 +30,7 @@ while True:
 
     except KeyboardInterrupt:
         with open(logfile, "a") as file:
-            file.write(f'\nMONITORAMENTO ENCERRADO - {datetime.datetime.now().time().strftime("%Hh%Mm%Ss")}')
+            file.write(f'\n\nMONITORAMENTO ENCERRADO - {datetime.datetime.now().time().strftime("%Hh%Mm%Ss")}')
         print(f'\nMONITORAMENTO ENCERRADO - {datetime.datetime.now().time().strftime("%Hh%Mm%Ss")}')
         os.system('pause')
         exit()
